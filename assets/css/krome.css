@@ -16,7 +16,7 @@ html, body{
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    height: 90%;
+    height: 55vh;
 }
 
 .navbar {
@@ -49,16 +49,17 @@ html, body{
 
 .search-widget {
     position: relative;
-    width: 90%;
-    height: 150px;
-    background-color: rgba(239, 239, 239, .8);
+    width: 80%;
+    height: 200px;
+    background-color: whitesmoke;
     margin: 0 auto;
-    margin-top: 20vh;
+    margin-top: 33vh;
+    box-shadow: -2px 2px 5px thistle;
 }
 
 .search-widget h3 {
     color: black;
-    padding: 1rem 2rem;
+    padding: 2rem;
 }
 
 .search-widget .form-control {
@@ -100,74 +101,117 @@ html, body{
     border-bottom-right-radius: 4px;
 }
 
+#mainav .logo {
+    background: url('../img/Kromevents5_1.svg') no-repeat;
+    vertical-align: middle;
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 148px;
+    height: 26px;
+
+}
+
 .text-primary {
     color: #EF7F2E !important;
     margin-bottom: .5rem;
 }
 
 main.container {
-    padding-top: 30px;
+    padding-top: 150px;
     width: 100%;
+    /* padding-left: 0;
+    padding-right: 0; */
 }
 
-/* .grid-wrapper {
-    padding: .5rem .3rem;
-    display: grid;
-    display: -ms-grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: .8rem;
-    grid-auto-columns: minmax(100px, auto);
-    justify-items: stretch;
-    align-items: stretch;
+/* media queries */
+@media only screen and (min-width: 320px) and (max-width: 840px), (max-height: 596px){
+    .search-widget {
+        display: none;
+    }
+
+    .banner {
+        height: 9vh;
+        background: none;
+    }
+
+    #mainav {
+        background: #630480;
+        box-shadow: 1px 1px 2px #EF7F2E;
+        height: 70px;
+    }
+
+    #mainav .logo {
+        background: url('../img/Kromevents3_1.svg') no-repeat;
+        width: 164px;
+        height: 31px;
+    }
+
+    @media only screen and (max-width: 990px) {
+        #mainav #navigation .navbar-nav {
+            width: 200px;
+            text-align: right;
+            background: #630480;
+            position: absolute;
+            padding: 1rem;
+            right: 0;
+            box-shadow: -2px 2px 3px #EF7F2E;
+        }   
+    }
 }
 
-.grid-wrapper > div {
-    width: 400px;
-    height: 200px;
-    overflow: hidden;
-    background-position: center center;
-    background-size: cover;
-} */
-
-.grid-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 10px;
-    grid-auto-rows: minmax(120px, auto);
-    grid-auto-flow: dense;
-    padding: 10px;
+@media only screen and (max-height: 520px) {
+    main.container {
+        padding-top: 40px;
+    }
 }
 
-.grid-item {
-    border-radius: 0;
-    overflow: hidden;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+@media only screen and (max-width: 1150px) {
+    .search-widget {
+        height: 230px;
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 10vh;
+    }
+
+    .search-widget h3{ 
+        padding-bottom: 1rem;
+        padding-top: 1rem; 
+    }
+
+    .search-widget form {
+        display: grid;
+        grid-template-areas:
+            'event category'
+            'location date'
+            'submit submit';
+        grid-gap: 10px;
+    }
+
+    #search-submit {
+        grid-area: submit;
+        border-radius: 0;
+    }
+
+    #search-event { grid-area: event; }
+    #search-location { grid-area: location; }
+    #search-date { grid-area: date; }
+    #search-category { grid-area: category; }
+
+    #search-event, #search-category, #search-location, #search-date {
+        border-radius: 0;
+        border: 1px #D2D6DF solid;
+    }
+
+    @media only screen and (max-height: 700px){
+        .search-widget {
+            margin-top: 4vh;
+        }
+    }
 }
 
-.span-2 {
-    grid-column-end: span 2;
-    grid-row-end: span 2;
-}
-
-.span-column-2 {
-    grid-column-end: span 2;
-}
-
-.span-row-2 {
-    grid-row-end: span 2;
-}
-
-.span-3 {
-    grid-column-end: span 3;
-    grid-row-end: span 3;
-}
-
-.span-column-3 {
-    grid-column-end: span 3;
-}
-
-.span-row-3 {
-    grid-row-end: span 3;
+@media only screen and (min-width: 1151px)and (max-width: 1200px) {
+    .search-widget {
+        margin-top: 8vh;
+    }
 }
